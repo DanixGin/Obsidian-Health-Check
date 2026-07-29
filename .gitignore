@@ -1,0 +1,29 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Private local config — never publish
+config/config.local.yaml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Reports / runtime
+*.log
+reports/
+out/
+dist/
+
+# Vault artifacts
+*.bak
+*.tmp

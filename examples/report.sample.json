@@ -1,0 +1,84 @@
+{
+  "tool": "obsidian-health-check",
+  "version": "1.0.1",
+  "timestamp": "2026-07-29T12:41:09.269761Z",
+  "vault": "sample_vault",
+  "summary": {
+    "ERROR": 2,
+    "WARN": 3,
+    "INFO": 1
+  },
+  "vault_modified": false,
+  "issues": [
+    {
+      "severity": "INFO",
+      "category": "duplicate_basename",
+      "file": "",
+      "line": 0,
+      "original": "shared.md",
+      "target": "shared.md",
+      "rationale": "Multiple files share this basename.",
+      "candidates": [
+        "a/shared.md",
+        "b/shared.md"
+      ]
+    },
+    {
+      "severity": "WARN",
+      "category": "ambiguous_link",
+      "file": "ambiguous.md",
+      "line": 1,
+      "original": "[[shared]]",
+      "target": "shared",
+      "rationale": "The short link resolves to multiple files.",
+      "candidates": [
+        "a/shared.md",
+        "b/shared.md"
+      ]
+    },
+    {
+      "severity": "ERROR",
+      "category": "missing_target",
+      "file": "broken.md",
+      "line": 1,
+      "original": "[[missing-note]]",
+      "target": "missing-note",
+      "rationale": "No matching Vault target was found.",
+      "candidates": []
+    },
+    {
+      "severity": "ERROR",
+      "category": "missing_embed",
+      "file": "broken.md",
+      "line": 2,
+      "original": "![[missing.png]]",
+      "target": "missing.png",
+      "rationale": "No matching Vault target was found.",
+      "candidates": []
+    },
+    {
+      "severity": "WARN",
+      "category": "missing_heading",
+      "file": "broken.md",
+      "line": 3,
+      "original": "[[folder/nested#Missing Heading]]",
+      "target": "folder/nested",
+      "rationale": "The target note does not contain this heading.",
+      "candidates": [
+        "folder/nested.md"
+      ]
+    },
+    {
+      "severity": "WARN",
+      "category": "missing_block",
+      "file": "broken.md",
+      "line": 4,
+      "original": "[[block-note#^missing-block]]",
+      "target": "block-note",
+      "rationale": "The target note does not contain this block ID.",
+      "candidates": [
+        "block-note.md"
+      ]
+    }
+  ]
+}
